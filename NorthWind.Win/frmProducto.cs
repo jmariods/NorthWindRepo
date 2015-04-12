@@ -46,6 +46,14 @@ namespace NorthWind.Win
             AgregarProductoaFactura();
         }
 
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Return)
+            {
+                AgregarProductoaFactura();
+            }
+        }
+
 
 
     }
