@@ -27,3 +27,5 @@ C:\_NET\Northwind\NorthWind.Win\obj\Debug\NorthWind.Win.frmDocumento.resources
 C:\_NET\Northwind\NorthWind.Win\obj\Debug\NorthWind.Win.frmProducto.resources
 C:\_NET\Northwind\NorthWind.Win\obj\Debug\NorthWind.Win.Properties.Resources.resources
 C:\_NET\Northwind\NorthWind.Win\obj\Debug\NorthWind.Win.csproj.GenerateResource.Cache
+C:\_NET\Northwind\NorthWind.Win\bin\Debug\Northwind.DAO.dll
+C:\_NET\Northwind\NorthWind.Win\bin\Debug\Northwind.DAO.pdb

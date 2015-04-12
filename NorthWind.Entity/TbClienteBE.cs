@@ -21,15 +21,15 @@ namespace NorthWind.Entity
             this.Ruc  = ruc;        
         }
 
-        public static List<TbClienteBE> SelectAll()
-        {
-            List<TbClienteBE> clientes = new List<TbClienteBE>();
-            clientes.Add(new TbClienteBE("c001", "Garcia","1585658"));
-            clientes.Add(new TbClienteBE("c002", "Rojas","1585658"));
-            clientes.Add(new TbClienteBE("c003", "Vega","1585658"));
-            clientes.Add(new TbClienteBE("c004", "Hinojosa","1585658"));            
-            return clientes;
+        //public static List<TbClienteBE> SelectAll()
+        //{
+        //    List<TbClienteBE> clientes = new List<TbClienteBE>();
+        //    clientes.Add(new TbClienteBE("c001", "Garcia","1585658"));
+        //    clientes.Add(new TbClienteBE("c002", "Rojas","1585658"));
+        //    clientes.Add(new TbClienteBE("c003", "Vega","1585658"));
+        //    clientes.Add(new TbClienteBE("c004", "Hinojosa","1585658"));            
+        //    return clientes;
 
-        }
+        //}
     }
 }
