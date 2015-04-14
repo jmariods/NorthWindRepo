@@ -55,6 +55,9 @@ namespace NorthWind.Win
         DocumentoBL oFacturaBL = new DocumentoBL();
         private void button3_Click(object sender, EventArgs e)
         {
+            ValidarCantidad();
+            
+            
             //Boton Agregar Factura
             oFacturaBL.AgregarDetalle(new ItemBE() { 
                 Cantidad=Convert.ToInt32(txtcantidad.Text),
@@ -70,6 +73,32 @@ namespace NorthWind.Win
             txtsubtotal.Text = oFacturaBL.SubTotal.ToString();
             txtigv.Text = oFacturaBL.IGV.ToString();
             txttotal.Text = oFacturaBL.Total.ToString();
+
+        }
+
+        private void ValidarCantidad(){
+
+            if (txtcantidad.Text.Trim() == String.Empty)
+            {
+                DocumentoErrorProvider.SetError(txtcantidad, "Ingrese cantidad de productos");
+                return;
+            }
+            char[] testArr = txtcantidad.Text.ToCharArray();
+            bool testBool = false;
+            for (int i = 0; i < testArr.Length; i++)
+            {
+                if (!char.IsNumber(testArr[i]))
+                {
+                    testBool = true;
+                }
+            }
+            if (testBool == true)
+            {
+                DocumentoErrorProvider.SetError(txtcantidad, "Cantidad Invalida");
+                return;
+
+            }
+
 
         }
     }
