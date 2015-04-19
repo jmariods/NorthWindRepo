@@ -61,6 +61,7 @@
             this.txttotal = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.DocumentoErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,6 +96,7 @@
             // 
             // txtruc
             // 
+            this.txtruc.Enabled = false;
             this.txtruc.Location = new System.Drawing.Point(321, 11);
             this.txtruc.Name = "txtruc";
             this.txtruc.Size = new System.Drawing.Size(100, 20);
@@ -111,6 +113,7 @@
             // 
             // txtcliente
             // 
+            this.txtcliente.Enabled = false;
             this.txtcliente.Location = new System.Drawing.Point(66, 35);
             this.txtcliente.Name = "txtcliente";
             this.txtcliente.Size = new System.Drawing.Size(187, 20);
@@ -196,6 +199,7 @@
             // 
             // txtprecio
             // 
+            this.txtprecio.Enabled = false;
             this.txtprecio.Location = new System.Drawing.Point(66, 41);
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(62, 20);
@@ -212,6 +216,7 @@
             // 
             // txtproducto
             // 
+            this.txtproducto.Enabled = false;
             this.txtproducto.Location = new System.Drawing.Point(66, 12);
             this.txtproducto.Name = "txtproducto";
             this.txtproducto.Size = new System.Drawing.Size(186, 20);
@@ -230,6 +235,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -240,10 +246,14 @@
             this.totalDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.DocumentobindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 148);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(427, 126);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
             // itemDataGridViewTextBoxColumn
             // 
@@ -316,24 +326,30 @@
             // 
             // txtsubtotal
             // 
+            this.txtsubtotal.Enabled = false;
             this.txtsubtotal.Location = new System.Drawing.Point(356, 288);
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.Size = new System.Drawing.Size(78, 20);
             this.txtsubtotal.TabIndex = 6;
+            this.txtsubtotal.Text = "0.00";
             // 
             // txtigv
             // 
+            this.txtigv.Enabled = false;
             this.txtigv.Location = new System.Drawing.Point(356, 314);
             this.txtigv.Name = "txtigv";
             this.txtigv.Size = new System.Drawing.Size(78, 20);
             this.txtigv.TabIndex = 7;
+            this.txtigv.Text = "0.00";
             // 
             // txttotal
             // 
+            this.txttotal.Enabled = false;
             this.txttotal.Location = new System.Drawing.Point(356, 340);
             this.txttotal.Name = "txttotal";
             this.txttotal.Size = new System.Drawing.Size(78, 20);
             this.txttotal.TabIndex = 8;
+            this.txttotal.Text = "0.00";
             // 
             // button4
             // 
@@ -343,16 +359,28 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "Guardar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // DocumentoErrorProvider
             // 
             this.DocumentoErrorProvider.ContainerControl = this;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(6, 290);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(71, 66);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Exportar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // frmDocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 362);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.txttotal);
             this.Controls.Add(this.txtigv);
@@ -364,7 +392,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDocumento";
-            this.Text = "frmDocumento";
+            this.Text = "Documento";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -411,5 +439,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource DocumentobindingSource;
         private System.Windows.Forms.ErrorProvider DocumentoErrorProvider;
+        private System.Windows.Forms.Button button5;
     }
 }

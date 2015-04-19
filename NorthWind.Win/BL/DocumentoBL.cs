@@ -32,6 +32,37 @@ namespace NorthWind.Win.BL
 
         }
 
+        public ItemBE ObtenerItem(List<ItemBE> oDetalle,String IdProducto)
+        {
+            ItemBE oItem = null;
+                
+                oItem=oDetalle.Find(
+                delegate(ItemBE be){
+                return be.Producto.CodProducto == IdProducto;
+                }
+            );
+            return oItem;
+
+        }
+        public void EliminarItem(List<ItemBE> oDetalle, String IdProducto)
+        {
+            SubTotal -= oDetalle.Find(
+                delegate(ItemBE be)
+                {
+                    return be.Producto.CodProducto == IdProducto;
+                }
+
+                ).Total;
+
+            
+            oDetalle.RemoveAt(oDetalle.FindIndex(
+                delegate(ItemBE be)
+                {
+                    return be.Producto.CodProducto == IdProducto;
+                }
+
+                ));
+        } 
 
     }
 }

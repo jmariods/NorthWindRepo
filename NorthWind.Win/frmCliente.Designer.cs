@@ -79,6 +79,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(360, 235);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
+            this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
             // 
             // codClienteDataGridViewTextBoxColumn
             // 

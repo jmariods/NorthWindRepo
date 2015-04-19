@@ -58,5 +58,12 @@ namespace NorthWind.Win
 
         }
 
+        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            AgregarClienteaFactura();
+        }
+
+
+
     }
 }
